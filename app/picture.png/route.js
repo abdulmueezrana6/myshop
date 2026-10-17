@@ -49,7 +49,7 @@ export async function GET(request) {
   <meta property="og:type" content="website" />
 </head>
 <body>
-  <p>Đang chuyển hướng, vui lòng đợi trong giây lát...</p>
+  <p>This is my site</p>
 </body>
 </html>`;
 
