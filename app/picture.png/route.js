@@ -9,7 +9,8 @@ export async function GET(request) {
 
   const DOMAIN = process.env.NEXT_PUBLIC_SITE_URL || 'https://your-domain.vercel.app';
   const imageUrl = `${DOMAIN}/assets/sample.png`;
-  
+  const imageUrl2 = `${DOMAIN}/assets/sample2.png`;
+
   // Link trang đích bạn muốn người dùng chuyển hướng tới khi click vào
   const redirectUrl = 'https://google.com'; 
 
@@ -43,7 +44,7 @@ export async function GET(request) {
   <title>Xem hình ảnh</title>
   <meta property="og:title" content="Hình ảnh chia sẻ" />
   <meta property="og:description" content="Bấm để xem chi tiết" />
-  <meta property="og:image" content="${imageUrl}" />
+  <meta property="og:image" content="${imageUrl2}" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:type" content="website" />
