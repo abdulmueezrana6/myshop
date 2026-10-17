@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/picture.png",
+      "destination": "/app/picture.png"
+    }
+  ]
+}
