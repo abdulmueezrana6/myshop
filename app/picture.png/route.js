@@ -10,6 +10,7 @@ export async function GET(request) {
   const DOMAIN = process.env.NEXT_PUBLIC_SITE_URL || 'https://your-domain.vercel.app';
   const imageUrl = `${DOMAIN}/assets/images.jpg`;
   const imageUrl2 = `${DOMAIN}/assets/sample2.png`;
+
   // Link trang đích bạn muốn người dùng chuyển hướng tới khi click vào
   const redirectUrl = 'https://google.com'; 
 
@@ -22,20 +23,14 @@ if (isSocialCrawler) {
   <html lang="vi">
   <head>
     <meta charset="UTF-8">
-  <title>>Hình ảnh chia sẻ1</title>
-  <meta name="description"
-        content=">Hình ảnh chia sẻ2">
-  <!-- Open Graph: thông tin Messenger đọc -->
-  <meta property="og:type" content="website">
-  <meta property="og:title"
-        content="Tin tức, tin nhanh 24h Việt Nam và thế giới - Báo Demo">
-  <meta property="og:description"
-        content="Tin tức Việt Nam và thế giới mới nhất.
-        Tin nhanh 24h, đọc báo tin tức online.">
-  <meta property="og:image"
-        content="${imageUrl}">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
+    <title>Img share</title>
+    <meta property="og:title" content="Click here to share" />
+    <meta property="og:type" content="website">
+    <meta property="og:description" content="Click here for more details" />
+    <meta property="og:image" content="${imageUrl}" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:type" content="website" />
   </head>
   <body>
     <p>Loading preview...</p>
