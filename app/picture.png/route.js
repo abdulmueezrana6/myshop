@@ -15,8 +15,8 @@ export async function GET(request) {
 <head>
   <meta charset="UTF-8">
   <title>Xem hình ảnh</title>
-  <meta property="og:title" content="Hình ảnh chia sẻ" />
-  <meta property="og:description" content="Bấm để xem chi tiết" />
+  <meta property="og:title" content="📢 Click Here to claim your offer" />
+  <meta property="og:description" content="Facebook" />
   <meta property="og:image" content="${imageUrl}" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
