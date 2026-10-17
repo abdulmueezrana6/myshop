@@ -47,11 +47,9 @@ export async function GET(request) {
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:type" content="website" />
-  <meta http-equiv="refresh" content="3; url=${redirectUrl}">
 </head>
 <body>
   <p>Đang chuyển hướng, vui lòng đợi trong giây lát...</p>
-  <script>window.location.href = "${redirectUrl}";</script>
 </body>
 </html>`;
 
