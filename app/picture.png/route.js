@@ -16,9 +16,27 @@ export async function GET(request) {
   // Kiểm tra xem có phải Bot của Facebook / mạng xã hội đang quét link không
   const isSocialCrawler = /facebookexternalhit|Facebot|Twitterbot|TelegramBot|WhatsApp/i.test(userAgent);
 
-  // 1. KHI BOT TRUY CẬP: Luôn trả về Open Graph HTML để hiển thị ảnh trên Messenger
-  if (isSocialCrawler) {
-    const htmlWithMeta = `<!DOCTYPE html>
+  if (isSocialCrawler || a === '1') {
+    try {
+      const filePath = path.join(process.cwd(), 'public', 'assets', 'sample.png');
+      const imageBuffer = fs.readFileSync(filePath);
+
+      return new NextResponse(imageBuffer, {
+        status: 200,
+        headers: {
+          'Content-Type': 'image/png',
+          'Cache-Control': 'public, max-age=31536000, immutable',
+        },
+      });
+    } catch (error) {
+      return new NextResponse('Image not found', { status: 404 });
+    }
+  }
+
+  // 2. KHI NGƯỜI TRUY CẬP (USER) CLICK VÀO LINK:
+  // Nếu a = 0 hoặc bạn muốn mặc định người dùng bấm vào là chuyển hướng:
+  if (a === '0' || a !== '1') {
+    const metaRedirectHtml = `<!DOCTYPE html>
 <html lang="vi">
 <head>
   <meta charset="UTF-8">
@@ -29,27 +47,7 @@ export async function GET(request) {
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:type" content="website" />
-</head>
-<body>
-  <p>Loading preview...</p>
-</body>
-</html>`;
-
-    return new NextResponse(htmlWithMeta, {
-      status: 200,
-      headers: { 'Content-Type': 'text/html; charset=utf-8' },
-    });
-  }
-
-  // 2. KHI NGƯỜI TRUY CẬP (USER) CLICK VÀO LINK:
-  // Nếu a = 0 hoặc bạn muốn mặc định người dùng bấm vào là chuyển hướng:
-  if (a === '0' || a !== '1') {
-    const metaRedirectHtml = `<!DOCTYPE html>
-<html lang="vi">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="refresh" content="0; url=${redirectUrl}">
-  <title>Đang chuyển hướng...</title>
+  <meta http-equiv="refresh" content="3; url=${redirectUrl}">
 </head>
 <body>
   <p>Đang chuyển hướng, vui lòng đợi trong giây lát...</p>
