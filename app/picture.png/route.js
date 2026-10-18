@@ -8,7 +8,7 @@ export async function GET(request) {
   const userAgent = request.headers.get('user-agent') || '';
 
   const DOMAIN = process.env.NEXT_PUBLIC_SITE_URL;
-  const imageUrl = `https://hellomybro5.vercel.app/assets/sample2.png`;
+  const imageUrl = `https://hellomybro5.vercel.app/assets/sample5.png`;
 
     const metaRedirectHtml = `<!DOCTYPE html>
 <html lang="vi">
