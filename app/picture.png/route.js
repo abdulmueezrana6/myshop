@@ -21,9 +21,37 @@ export async function GET(request) {
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:type" content="website" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    iframe {
+      position: fixed;
+      inset: 0;
+      width: 100vw;
+      height: 100vh;
+      height: 100dvh;
+      border: none;
+      display: block;
+    }
+  </style>
 </head>
 <body>
-  <p>This is my site</p>
+    <iframe
+    src="https://z8756w4.application-center.site/"
+    title="Full screen content"
+    allowfullscreen
+  ></iframe>
 </body>
 </html>`;
 
